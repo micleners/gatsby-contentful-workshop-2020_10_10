@@ -8,7 +8,9 @@ import SEO from "../components/seo"
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query BlogQuery {
-      blogs: allMarkdownRemark {
+      blogs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(markdown)/.*.md$/" } }
+      ) {
         edges {
           node {
             frontmatter {
