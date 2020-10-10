@@ -4,6 +4,7 @@ import { Box, Heading } from "rebass"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Blog from "../pages/blog"
 
 const ViewAllPosts = () => <Link to="/blog">View all blogs</Link>
 
@@ -14,7 +15,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title={title} />
       <ViewAllPosts />
       <Heading as="h1" fontSize="5" mb="10px">
         {title}
