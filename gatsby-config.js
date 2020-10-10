@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
@@ -13,6 +14,13 @@ module.exports = {
       options: {
         name: `static`,
         path: `${__dirname}/src/static`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`,
       },
     },
     {
